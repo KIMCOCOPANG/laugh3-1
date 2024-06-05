@@ -1,0 +1,140 @@
+/* styles.css */
+
+/* 폰트 설정 */
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+p {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.gothic-a1-regular {
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.noto-sans-kr-800 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+
+
+
+/* 전체 페이지 설정 */
+body {
+    background-color: #ffff94;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+/* 제목 컨테이너 */
+.title-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 1px solid black;
+}
+
+.scrolling-text {
+    display: inline-block;
+    font-size: 20pt;
+    color: pink;
+    text-shadow: 2px 2px 0 black;
+    animation: scroll-text 10s linear infinite;
+}
+
+@keyframes scroll-text {
+    40% {
+        transform: translateX(50%);
+    }
+    50% {
+        transform: translateX(30%);
+    }
+}
+
+/* 버튼 컨테이너 */
+.buttons-container {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px; /* 버튼 간의 간격 조절 */
+}
+
+.category-button {
+    background-color: green;
+    color: black;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 10pt;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 0px;
+}
+
+.category-button:nth-child(2n) {
+    background-color: #ff9bda;
+}
+
+.category-button:nth-child(2n+1) {
+    background-color: #3affad;
+}
+
+/* 설명 컨테이너 */
+.description-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.category-description {
+    font-size: 10pt;
+}
+
+
+/* ----- 이미지 그리드 설정 ----- */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(16, 95px);
+    grid-template-rows: repeat(18, 55px);
+    gap: 10px;
+    padding-top: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* 각 이미지 스타일 설정 */
+.image-grid a {
+    display: block;
+    width: 95px;
+    height: 55px;
+    overflow: hidden;
+    border: 1.5pt solid blue; /* 테두리 추가 */
+}
+
+.image-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    mix-blend-mode: multiply; /* 배경색과 혼합 */
+    transition: transform 0.3s ease;
+}
+
+/* 호버 시 이미지 변경 효과 */
+.image-grid a:hover img {
+    transform: scale(1.0);
+}
+
+
